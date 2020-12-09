@@ -1,0 +1,13 @@
+li{
+  padding: 10px 0;
+  font-size: 22px;
+  .finished{
+    text-decoration: line-through;
+  }
+  .remove{
+    padding-left: 20px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
