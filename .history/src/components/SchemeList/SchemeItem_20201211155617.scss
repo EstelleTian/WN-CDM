@@ -1,0 +1,10 @@
+.list_container{
+    .item_container{
+        border-bottom: 1px solid #ddd;
+        margin: 0 8px;
+        height: 36px;
+        .normal_rate{
+            color: orange;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.nav_header{
+    height: 44px !important;
+    line-height: 44px!important;
+}
+.nav_right{
+    float: right;
+    .bell_icon{
+        font-size: 20px;
+        position: relative;
+        top:3px;
+    }
+    .user_icon{
+        margin: -1px 10px 0 30px;
+    }
+    // .user-name{
+        
+    // }
+}
