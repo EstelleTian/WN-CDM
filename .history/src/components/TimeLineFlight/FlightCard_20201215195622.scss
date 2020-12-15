@@ -1,0 +1,19 @@
+.flight_card{
+    .flight_item{
+        display: inline-block;
+        
+        width: 45px;
+        transform: scale(0.8);
+        border: 1px solid rgb(173, 171, 171);
+        >div{
+            
+            display: inline-block;
+        }
+    }
+    .dep{
+        background-color: #008200;
+    }
+    .arr{
+        background-color: #0076F7;
+    }
+}

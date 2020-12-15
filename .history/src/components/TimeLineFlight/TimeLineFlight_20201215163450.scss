@@ -1,0 +1,49 @@
+.filght_content{
+    margin: 5px 50px;
+    .filter_header{
+        border: 1px solid grey;
+        >span{
+            display: inline-block;
+            width: 50%;
+        }
+        >div{
+            height: 24px;
+            >span{
+                display: inline-block;
+            }
+        }
+        .unit_name{
+            font-size: 22px;
+            color: orange;
+            text-align: center;
+            line-height: 50px;
+            vertical-align: top;
+            border-right: 1px solid grey;
+        }
+        .filter_dom{
+            font-size: 14px;
+            text-align: center;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        .condition{
+            border-bottom: 1px solid grey;
+
+        }
+        .unit_time{
+            background-color: rgb(66, 66, 233);
+            width: 50%;
+        }
+        .unit_hour{
+            width: 14%;
+            color: b
+            background-color: rgb(221, 210, 55);
+        }
+        
+    }
+    .timeline{
+        width: 48%;
+        display: inline-block;
+    }
+}

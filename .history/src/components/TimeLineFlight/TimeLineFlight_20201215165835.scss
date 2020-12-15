@@ -1,0 +1,62 @@
+.filght_content{
+    margin: 5px 50px;
+    .filter_header{
+        border: 1px solid grey;
+        text-align: center;
+        >span{
+            display: inline-block;
+            width: 50%;
+        }
+        >div{
+            >span{
+                display: inline-block;
+            }
+        }
+        .unit_name{
+            font-size: 22px;
+            color: orange;
+            line-height: 50px;
+            vertical-align: top;
+            border-right: 1px solid grey;
+        }
+        .filter_dom{
+            font-size: 14px;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        .condition{
+            border-bottom: 1px solid grey;
+
+        }
+        .unit_time{
+            color: #000;
+            background-color: #4F94E5;
+            display: inline-block;
+            width: 50%;
+        }
+        .unit_hour{
+            width: 16%;
+            color: #000;
+            background-color:#FBD84D;
+            display: inline-block;
+            border-right: 1px solid rgb(49, 49, 49);
+        }
+        .unit_hour.left,.unit_hour.right{
+            width: 10%;
+        }
+        .unit_hour.right{
+            border-right: none;
+        }
+        
+    }
+    .timeline{
+        font-size: 12px;
+        width: 48%;
+        display: inline-block;
+    }
+    .date_line{
+        position: absolute;
+left: 
+    }
+}

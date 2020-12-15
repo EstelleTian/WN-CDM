@@ -1,0 +1,28 @@
+.list_container{
+    .item_container{
+        background-color: $bg-35;
+        margin: 5px 8px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+        &:hover{
+            cursor: pointer;
+        }
+        
+        .item_name{
+            font-size: 16px;
+
+        }
+        .item_check{
+            margin: 0 10px;
+        }
+        .normal_rate{
+            display: inline-block;
+            float: right;
+            color: orange;
+        }
+    }
+    .item_active{
+        border: 1px solid #0095eb;
+    }
+}

@@ -1,0 +1,10 @@
+
+.ant-table-container{
+    @include display_flex(column);
+    .ant-table-body{
+        @include flex();
+    }
+}
+.flight_canvas{
+    width: 960px;
+}

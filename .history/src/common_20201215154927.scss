@@ -1,0 +1,31 @@
+$bg-15: rgba(0,0,0,0.15);
+$bg-35: rgba(0,0,0,0.35);
+$bg-100: rgba(0,0,0,1);
+
+$red: #ff0000;
+
+@mixin display_flex($dir: row){
+    display: box;
+    display: -webkit-box;     
+    display: -moz-box;        
+    display: -ms-flexbox;     
+    display: -webkit-flex; 
+    -webkit-flex-direction: $dir;
+    -moz-flex-direction: $dir;
+    -ms-flex-direction: $dir;
+    -o-flex-direction: $dir;
+    flex-direction: $dir;
+}
+/* 子元素-平均分栏 */
+@mixin flex($part: 1) {
+    -webkit-box-flex: $part;
+    -moz-box-flex: $part;                    
+    -webkit-flex: $part;         
+    -ms-flex: $part;             
+    flex: $part; 
+    overflow: hidden; //可以避免容器被撑大
+}
+
+
+
+

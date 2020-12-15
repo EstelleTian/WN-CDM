@@ -1,0 +1,12 @@
+
+
+.ant-table-wrapper{
+    overflow-y: auto;
+    height: 565px;
+}
+.ant-table-container{
+    @include display_flex(column);
+    .ant-table-body{
+        @include flex();
+    }
+}
