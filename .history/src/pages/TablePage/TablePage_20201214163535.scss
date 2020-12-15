@@ -1,0 +1,12 @@
+.site-layout-content{
+  min-height: 280px;
+  width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.flight_canvas{
+  @include display_flex(column);
+  @include flex();
+  height: calc( 100% - 320px );
+}

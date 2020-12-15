@@ -1,0 +1,11 @@
+.layout{
+    @include display_flex();
+    .nav_bar{
+        height: 44px;
+    }
+    
+    .nav_body{
+        @include flex();
+    }
+}
+

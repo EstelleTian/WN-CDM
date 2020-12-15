@@ -1,0 +1,25 @@
+.layout{
+    @include display_flex();
+    .nav_bar{
+        height: 44px;
+    }
+    .nav_body{
+        @include flex();
+        @include display_flex();
+        .cont_left{
+            @include flex(2);
+        }
+        .cont_center{
+            @include display_flex(column);
+            @include flex(3);
+        }
+        .cont_right{
+            @include flex(2);
+            @include display_flex(column);
+        }
+    }
+    .flight_search{
+        height: 260px;
+    }
+}
+

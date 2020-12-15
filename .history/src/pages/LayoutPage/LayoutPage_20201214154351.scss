@@ -1,0 +1,11 @@
+.layout{
+    @include display_flex();
+    .nav_bar{
+        
+    }
+    
+    .nav_body{
+        @include flex();
+    }
+}
+
