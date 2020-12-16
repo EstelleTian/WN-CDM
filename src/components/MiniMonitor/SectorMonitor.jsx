@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-16 13:18:11
- * @LastEditTime: 2020-12-16 13:50:20
+ * @LastEditTime: 2020-12-16 17:20:18
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\components\MiniMonitor\SecotorMonitor.jsx
@@ -25,8 +25,6 @@ function SectorMonitor(props){
             }
             
         }
-        console.log(timeArr);
-
         let customArr = [];
         let customArrStack = [];
         let capArr = [];

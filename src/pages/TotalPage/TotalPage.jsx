@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-09 21:19:04
- * @LastEditTime: 2020-12-16 16:16:13
+ * @LastEditTime: 2020-12-16 17:30:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\pages\FangxingPage\FangxingPage.jsx
@@ -16,6 +16,7 @@ import AirportMonitor from '../../components/MiniMonitor/AirportMonitor'
 import SectorMonitor from '../../components/MiniMonitor/SectorMonitor'
 import AddMonitorCard from '../../components/MiniMonitor/AddMonitorCard'
 import SimpleMap from '../../components/SimpleMap/SimpleMap'
+import FlightPerformance from '../../components/FlightPerformance/FlightPerformance'
 import './TotalPage.scss'
 //总体监控布局模块
 class TodoPage extends Component{
@@ -35,6 +36,7 @@ class TodoPage extends Component{
                                     <ModalBox 
                                         title="航班执行情况"
                                     >
+                                        <FlightPerformance/>
                                     </ModalBox>
                                     
                                 </div>

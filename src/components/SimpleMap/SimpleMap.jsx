@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-16 16:12:27
- * @LastEditTime: 2020-12-16 17:15:41
+ * @LastEditTime: 2020-12-16 17:28:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\components\SimpleMap\SimpleMap.jsx
@@ -21,7 +21,7 @@ import 'leaflet/dist/leaflet.css'
 import './SimpleMap.scss'
 class SimpleMap extends React.Component {
     setMap(){
-        const ipHost = "http://192.168.243.8:7070/geoserver/gwc/service/wms";
+        const ipHost = "http://192.168.210.112:7070/geoserver/gwc/service/wms";
         let mainMap = L.map("map", {
             minZoom: 3,//设置最小缩放等级
             // maxZoom: 10,//设置最小缩放等级
@@ -36,8 +36,8 @@ class SimpleMap extends React.Component {
 
         //地图详细街道(加载wms瓦片)
         let openmap = L.tileLayer.wms(ipHost, {
-            layers: 'chinaosm:osm',
-            format: 'image/png8',
+            layers: 'ADCC_CDM:CHINA_STREET_MAP',
+            format: 'image/jpeg',
         });
         //中国轮廓图
         let chinaBorder = L.geoJSON(china, {
@@ -54,7 +54,8 @@ class SimpleMap extends React.Component {
         //定义图层
         let baseMapLaysers = {
             中国: chinaBorder,
-            街道: openmap
+            街道: openmap,
+            
         };
 
 
