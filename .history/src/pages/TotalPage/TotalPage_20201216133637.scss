@@ -1,0 +1,26 @@
+
+.total_body{
+    @include display-flex(column);
+    @include flex();
+    .cont_top{
+        @include display-flex();
+        @include flex();
+        .cont_top_left{
+            @include flex();
+        }
+        .cont_top_right{
+            @include flex(2);
+        }
+    }
+    .cont_bottom{
+        @include flex();
+        @include display-flex();
+        .cont_bottom_left{
+            @include flex();
+            
+        }
+        .cont_bottom_right{
+            @include flex(2);
+        }
+    }
+}
