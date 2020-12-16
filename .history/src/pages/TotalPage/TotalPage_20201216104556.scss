@@ -17,11 +17,6 @@
         @include display-flex();
         .cont_bottom_left{
             @include flex();
-            .airport_monitor{
-                width: 48%;
-                display: inline-block;
-                height: 48%;
-            }
         }
         .cont_bottom_right{
             @include flex(2);

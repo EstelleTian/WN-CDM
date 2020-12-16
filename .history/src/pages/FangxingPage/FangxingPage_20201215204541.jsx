@@ -1,7 +1,15 @@
 /*
  * @Author: your name
  * @Date: 2020-12-09 21:19:04
- * @LastEditTime: 2020-12-16 11:29:47
+ * @LastEditTime: 2020-12-15 20:45:40
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \WN-CDM\src\pages\FangxingPage\FangxingPage.jsx
+ */
+/*
+ * @Author: your name
+ * @Date: 2020-12-09 21:19:04
+ * @LastEditTime: 2020-12-15 20:27:16
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\pages\FangxingPage\FangxingPage.jsx
@@ -15,8 +23,7 @@ import ExecuteKPI  from '../../components/ExecuteKPI/ExecuteKPI';
 import TimeLineFlight  from '../../components/TimeLineFlight/TimeLineFlight';
 import FlightSearch  from '../../components/FlightSearch/FlightSearch';
 import NavBar  from '../../components/NavBar/NavBar.jsx';
-// import * as stores  from '../../stores/schemeStores.jsx';
-import * as stores  from '../../stores/stores.jsx';
+import * as stores  from '../../stores/schemeStores.jsx';
 import ModalBox from '../../components/ModalBox/ModalBox'
 import './FangxingPage.scss'
 //放行监控布局模块
@@ -35,9 +42,7 @@ class TodoPage extends Component{
                             <div className="cont_center">
                                 <ModalBox 
                                     title="执行KPI"
-                                    style={{
-                                        height: 320
-                                    }}
+                                    height= {320}
                                 >
                                     <ExecuteKPI />
                                 </ModalBox>

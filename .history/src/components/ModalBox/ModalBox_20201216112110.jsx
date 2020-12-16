@@ -1,37 +1,42 @@
 /*
  * @Author: your name
  * @Date: 2020-12-10 11:11:07
- * @LastEditTime: 2020-12-16 11:27:23
+ * @LastEditTime: 2020-12-16 11:21:09
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\components\ModalBox\ModalBox.jsx
  */
-import React, {useState, useRef, useEffect} from 'react'
+import React from 'react'
 
 import './ModalBox.scss'
 
 const ModalBox = (props) => {
-    let [contentHeight, setContentHeight] = useState(0);
-    let modalRef = useRef();
-    const { style={}, className = "", title } = props;
-
+    let [contentHeight, setContentHeight] = useState;
+    const { width = '100wh', height = "", options = "", className = "", title } = props;
+    let opt = {};
+    if( width != "" ){
+        opt.width = width;
+    }
+    if( height != "" ){
+        opt.height = height;
+    }
+    if( options != "" ){
+        opt.options = options;
+    }
 
     useEffect(() => {
-        console.log("modalRef", modalRef);
-        let offsetHeight = modalRef.current.offsetHeight
-        offsetHeight -= 40
-        setContentHeight( offsetHeight )
+        
     }, [contentHeight])
     
     return(
-        <div ref={modalRef} className={`modal_box ${ className != "" ? className : ""}`}  style={style} >
+        <div ref={} className={`modal_box ${ className != "" ? className : ""}`}  style={opt} >
         { title != "" ? 
             <div className="box_header">
                 <span className="title">{title}</span>
             </div>
             : ""}
             
-            <div className="box_content" style={{ height: contentHeight}}>
+            <div className="box_content" style={{ height: opt.height - 31}}>
                 {props.children}
             </div>
         </div>

@@ -16,7 +16,7 @@
     }
     .box_content{
         @include display_flex(column);
-        @include flex();
+        @include flex()
     }
 }
 

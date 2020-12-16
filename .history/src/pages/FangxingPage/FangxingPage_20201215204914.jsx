@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-09 21:19:04
- * @LastEditTime: 2020-12-16 11:29:47
+ * @LastEditTime: 2020-12-15 20:49:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\pages\FangxingPage\FangxingPage.jsx
@@ -35,9 +35,7 @@ class TodoPage extends Component{
                             <div className="cont_center">
                                 <ModalBox 
                                     title="执行KPI"
-                                    style={{
-                                        height: 320
-                                    }}
+                                    height= {320}
                                 >
                                     <ExecuteKPI />
                                 </ModalBox>

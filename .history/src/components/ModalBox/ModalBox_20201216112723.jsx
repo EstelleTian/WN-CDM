@@ -24,7 +24,7 @@ const ModalBox = (props) => {
     }, [contentHeight])
     
     return(
-        <div ref={modalRef} className={`modal_box ${ className != "" ? className : ""}`}  style={style} >
+        <div ref={modalRef} className={`modal_box ${ className != "" ? className : ""}`}  style={opt} >
         { title != "" ? 
             <div className="box_header">
                 <span className="title">{title}</span>

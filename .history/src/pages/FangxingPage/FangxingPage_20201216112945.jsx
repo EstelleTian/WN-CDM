@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-09 21:19:04
- * @LastEditTime: 2020-12-16 11:29:47
+ * @LastEditTime: 2020-12-16 11:29:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\pages\FangxingPage\FangxingPage.jsx
@@ -38,6 +38,7 @@ class TodoPage extends Component{
                                     style={{
                                         height: 320
                                     }}
+                                    height= {320}
                                 >
                                     <ExecuteKPI />
                                 </ModalBox>

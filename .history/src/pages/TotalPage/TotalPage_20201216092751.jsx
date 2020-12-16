@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-09 21:19:04
- * @LastEditTime: 2020-12-16 10:46:19
+ * @LastEditTime: 2020-12-16 09:27:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\pages\FangxingPage\FangxingPage.jsx
@@ -38,16 +38,7 @@ class TodoPage extends Component{
                                 </div>
                             </div>
                             <div className="cont_bottom">
-                                <div className="cont_bottom_left">
-                                    <MiniMonitor className="airport_monitor" title="西安机场" />
-                                    <MiniMonitor className="airport_monitor" title="甘肃机场" />
-                                    <MiniMonitor className="airport_monitor" title="兰州机场" />
-                                    <MiniMonitor className="airport_monitor" title="青海机场" />
-                                </div>
-                                <div className="cont_bottom_right">
-
-                                </div>
-                                
+                                <MiniMonitor title="西安机场" />
                             
                             </div>
                         </div>
