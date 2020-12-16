@@ -10,15 +10,16 @@ import React from 'react'
 import ReactEcharts from 'echarts-for-react'
 
 
-//
+// 环形饼图
 const PieChart = (props) => {
     const getOption = function () {
 
         const option = {
-            color: ["#8F959E", "#008200", "#8F959E", "#0076F7", "#FFA500"],
+            backgroundColor: "#00000000",
+            color: [ "#0076F7", "#FFA500","#37A2DA", "#f04864","#8F959E", "#67E0E3", "#9FE6B8", "#FFDB5C", "#ff9f7f","#fb7293","#E062AE","#E690D1","#e7bcf3","#9d96f5","#8378EA","#96BFFF"],
             tooltip: {
                 trigger: 'item',
-                formatter: '{a} <br/>{b} : {c} ({d}%)'
+                formatter: '{b} : {c} <br> ({d}%)'
             },
             legend: {
                 data: ['机场', '航路', '天气', '要客', '其他'],
@@ -27,7 +28,7 @@ const PieChart = (props) => {
             series: [{
                 name: '',
                 type: 'pie',
-                radius: ['20%', '40%'],
+                radius: ['30%', '40%'],
                 data: [
                     {value: 2, name: '机场'},
                     {value: 4, name: '航路'},
