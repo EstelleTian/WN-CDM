@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-09 21:19:04
- * @LastEditTime: 2020-12-16 14:04:05
+ * @LastEditTime: 2020-12-16 16:16:13
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\pages\FangxingPage\FangxingPage.jsx
@@ -15,6 +15,7 @@ import NavBar  from '../../components/NavBar/NavBar.jsx'
 import AirportMonitor from '../../components/MiniMonitor/AirportMonitor'
 import SectorMonitor from '../../components/MiniMonitor/SectorMonitor'
 import AddMonitorCard from '../../components/MiniMonitor/AddMonitorCard'
+import SimpleMap from '../../components/SimpleMap/SimpleMap'
 import './TotalPage.scss'
 //总体监控布局模块
 class TodoPage extends Component{
@@ -27,7 +28,7 @@ class TodoPage extends Component{
                             <div className="cont_top">
                                 <div className="cont_top_left">
                                     <ModalBox title="缩略地图"  >
-                                        
+                                        <SimpleMap/>
                                     </ModalBox>
                                 </div>
                                 <div className="cont_top_right">

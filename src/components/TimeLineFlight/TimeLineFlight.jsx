@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-14 15:16:04
- * @LastEditTime: 2020-12-16 14:58:46
+ * @LastEditTime: 2020-12-16 16:27:01
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\pages\TimeLineFlightPage\TimeLineFlightPage.jsx
@@ -58,7 +58,7 @@ const TimeLineFlight = (props) => {
                             if( item < 10 ){
                                 str = "0"+item
                             }
-                            if( str != "00" && str != "15" && str != "30" && str != "45" && str != "59" ){
+                            if( str !== "00" && str !== "15" && str !== "30" && str !== "45" && str !== "59" ){
                                 str = ""
                                 borderBottom = "none"
                             }
