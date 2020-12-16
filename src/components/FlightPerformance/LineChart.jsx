@@ -9,9 +9,48 @@
 import React from 'react'
 import ReactEcharts from 'echarts-for-react'
 
+import { getFullTime, addStringTime } from '../../utils/basic-verify'
+
 //堆叠区域图
 const LineChart =(props) => {
+
+    const getTimeAxis = function () {
+        var now = getFullTime(new Date());
+
+        var number = 1000*60*60*24/(1000*60*10);
+
+        var arr = [];
+
+        for ( let i=0; i<number; i++){
+
+            const str = addStringTime(now, -1*i*1000*60*10);
+            arr.push(str.substring(8,10)+ ":" + str.substring(10,12) );
+
+        }
+        return arr;
+    };
+
+
+    const  randomValue = function () {
+        var number = 1000*60*60*24/(1000*60*10);
+        var arr = [];
+
+        for ( let i=0; i<number; i++){
+            const val = Math.floor(Math.random()*10);
+            arr.push(val);
+        }
+
+        return arr;
+    };
+
     const getOption = function () {
+
+        var xAxis = getTimeAxis();
+        console.log(xAxis)
+
+
+
+
 
         const option = {
             backgroundColor: "#00000000",
@@ -40,7 +79,7 @@ const LineChart =(props) => {
                 {
                     type: 'category',
                     boundaryGap: false,
-                    data: ['16:00', '16:10', '16:20','16:30','16:40','16:50',],
+                    data: xAxis,
                     axisTick: {
                         show: false
                     },
@@ -76,28 +115,28 @@ const LineChart =(props) => {
                     type: 'line',
                     stack: '总量',
                     areaStyle: {},
-                    data: [60, 62, 67, 71, 73, 78]
+                    data: randomValue()
                 },
                 {
                     name: '降落',
                     type: 'line',
                     stack: '总量',
                     areaStyle: {},
-                    data: [50, 52, 55, 56, 57, 63]
+                    data: randomValue()
                 },
                 {
                     name: '飞越本区',
                     type: 'line',
                     stack: '总量',
                     areaStyle: {},
-                    data: [5, 6, 8, 9, 11, 13]
+                    data: randomValue()
                 },
                 {
                     name: '国际飞越',
                     type: 'line',
                     stack: '总量',
                     areaStyle: {},
-                    data: [2, 3, 3, 5, 7, 9]
+                    data: randomValue()
                 },
             ]
         };
