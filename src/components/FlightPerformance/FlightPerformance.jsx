@@ -10,6 +10,7 @@ import React from 'react'
 import PerformanceItemHeader from './PerformanceItemHeader'
 import List from './List'
 import PieChart from './PieChart'
+import LineChart from './LineChart'
 import './FlightPerformance.scss'
 
 
@@ -55,35 +56,7 @@ const FlightPerformance =(props) => {
             <div className="performance_item">
                 <PerformanceItemHeader style={ {background:"#595654", color:"#FFCC00"}}  title="执行"  value="88"  unit="%"  />
                 <div className="content">
-                    <List listData={[
-                        {
-                            id:2,
-                            color:"#1890ff",
-                            des:"计划起飞",
-                            value:1234,
-                            unit: "架次"
-                        },{
-                            id:2,
-                            color: "#13c2c2",
-                            des:"计划落地",
-                            value:99,
-                            unit: "架次"
-                        },
-                        {
-                            id:3,
-                            color: "#2fc25b",
-                            des:"飞越本区",
-                            value:12,
-                            unit: "架次"
-                        },
-                        {
-                            id:4,
-                            color: "#facc14",
-                            des:"国际飞越",
-                            value:8,
-                            unit: "架次"
-                        },
-                    ]} />
+                    <LineChart/>
                 </div>
             </div>
             <div className="performance_item">
