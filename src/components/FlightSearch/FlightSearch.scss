@@ -43,7 +43,8 @@
         top: 0;
         background: #232425;
         z-index: 1;
-        box-shadow: 0 6px 16px -8px rgba(0,0,0,.32), 0 9px 28px 0 rgba(0,0,0,.2), 0 12px 48px 16px rgba(0,0,0,.12);
+        //box-shadow: 0 6px 16px -8px rgba(0,0,0,.32), 0 9px 28px 0 rgba(0,0,0,.2), 0 12px 48px 16px rgba(0,0,0,.12);
+        box-shadow: -6px 0 16px -8px rgba(0,0,0,.5), -9px 0 28px 0 rgba(0,0,0,.5), -12px 0 48px 16px rgba(0,0,0,.5);
         @include display_flex();
         flex: 0 1 auto;
 
@@ -87,18 +88,28 @@
     .title-flight-id {
       cursor: pointer;
     }
-    .flight-summary {
-      @include display_flex();
-      .descriptions {
-        @include flex();
+    .flight-summary-drawer {
+      .ant-drawer-content-wrapper {
+        box-shadow: -6px 0 16px -8px rgba(0,0,0,.5), -9px 0 28px 0 rgba(0,0,0,.5), -12px 0 48px 16px rgba(0,0,0,.5);
+        //border-radius: 4px;
+        //border-left: 1px solid $c-white-15;
+
       }
-      .ap {
-        flex: 0 1 100px;
+
+      .flight-summary {
+        @include display_flex();
+        .descriptions {
+          @include flex();
+        }
+        .ap {
+          flex: 0 1 80px;
+        }
+      }
+      .summary-nav{
+        color: #5bc0de;
       }
     }
-    .summary-nav{
-      color: #5bc0de;
-    }
+
   }
   .flight-search {
     .ant-input {

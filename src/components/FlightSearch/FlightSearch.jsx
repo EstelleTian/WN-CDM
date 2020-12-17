@@ -360,6 +360,7 @@ const FlightSearch = (props) => {
                     />
                 </div>
                 <Drawer
+                    className="flight-summary-drawer"
                     title={ title }
                     placement="right"
                     closable={true}
@@ -367,7 +368,7 @@ const FlightSearch = (props) => {
                     visible={drawerVisible}
                     mask={ false}
                     getContainer={false}
-                    width="100%"
+                    width="70%"
                     style={{position: 'absolute'}}
                 >
                     { drawFlightSummerData()}
