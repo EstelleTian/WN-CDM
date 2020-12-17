@@ -251,7 +251,7 @@ const FlightSearch = (props) => {
     const drawDrawerTitle = function () {
         const text  = <span>{`查看航班详情`}</span>;
 
-        const title = <Tooltip placement="right" title={text}>
+        const title = <Tooltip placement="top" title={text}>
                         <span className="title-flight-id">{flight.flightId}</span>
                     </Tooltip>;
         return title
