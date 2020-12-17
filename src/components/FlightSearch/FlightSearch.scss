@@ -48,15 +48,15 @@
         flex: 0 1 auto;
 
         .flight-prop {
-          flex: 1 1 5%;
+          @include flex();
           visibility: visible;
-          //text-align: center;
+          text-align: center;
         }
         .num {
-          flex: 0 0 35px;
+          flex: 0 0 50px;
         }
         .flight-id, .flight-sobt , .flight-former {
-          flex: 1 1 10%;
+          //flex: 1 1 10%;
         }
 
       }
@@ -69,16 +69,17 @@
           @include display_flex();
           @include flex();
           .flight-prop {
-            flex: 1 1 4%;
+            @include flex();
             visibility: visible;
-            //text-align: center;
+            text-align: center;
           }
           .num {
-            flex: 0 0 35px;
+            flex: 0 0 50px;
           }
-          .flight-id, .flight-sobt, .flight-former {
-            flex: 1 1 10%;
-          }
+
+          //.flight-id, .flight-sobt, .flight-former {
+          //  flex: 1 1 10%;
+          //}
 
         }
       }
