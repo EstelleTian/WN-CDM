@@ -314,15 +314,7 @@ const FlightSearch = (props) => {
 
             <div className="options">
                 <div className="box">
-                    <Select
-                        size="small"
-                        style={{marginRight: '2%',}}
-                        defaultValue="today"
-                    >
-                        <Option value="yestoday">昨日</Option>
-                        <Option value="today">今日</Option>
-                        <Option value="tomorrow">明日</Option>
-                    </Select>
+
                     <Tooltip title="请输入航班号" color="volcano" visible={searchTootipVisible}>
                         <Search className="flight-search"
                                 placeholder="请输入航班号"
@@ -334,9 +326,18 @@ const FlightSearch = (props) => {
                                 onChange={changeValue}
                                 onMouseLeave={ hideTooltip }
                                 onBlur ={ hideTooltip }
-                                style={{marginRight: '2%'}}
+                                style={{marginRight: '2%', width: '45%'}}
                         />
                     </Tooltip>
+                    <Select
+                        size="small"
+                        style={{marginRight: '2%'}}
+                        defaultValue="today"
+                    >
+                        <Option value="yestoday">昨日</Option>
+                        <Option value="today">今日</Option>
+                        <Option value="tomorrow">明日</Option>
+                    </Select>
 
                 </div>
 
