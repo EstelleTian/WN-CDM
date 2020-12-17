@@ -15,11 +15,11 @@ import { getFullTime, addStringTime } from '../../utils/basic-verify'
 const LineChart =(props) => {
 
     const getTimeAxis = function () {
-        var now = getFullTime(new Date());
+        const now = getFullTime(new Date());
 
-        var number = 1000*60*60*24/(1000*60*10);
+        const number = 1000*60*60*24/(1000*60*10);
 
-        var arr = [];
+        let arr = [];
 
         for ( let i=0; i<number; i++){
 
@@ -32,8 +32,8 @@ const LineChart =(props) => {
 
 
     const  randomValue = function () {
-        var number = 1000*60*60*24/(1000*60*10);
-        var arr = [];
+        const number = 1000*60*60*24/(1000*60*10);
+        let arr = [];
 
         for ( let i=0; i<number; i++){
             const val = Math.floor(Math.random()*10);
@@ -45,12 +45,7 @@ const LineChart =(props) => {
 
     const getOption = function () {
 
-        var xAxis = getTimeAxis();
-        console.log(xAxis)
-
-
-
-
+        const xAxis = getTimeAxis();
 
         const option = {
             backgroundColor: "#00000000",
