@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-16 18:31:44
- * @LastEditTime: 2020-12-17 09:42:42
+ * @LastEditTime: 2020-12-17 09:38:58
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\components\TimeLineFlight\TimeLineHeader.jsx
@@ -20,9 +20,8 @@ function TimeLineHeader(props){
             now = getFullTime(now);
             setStandardTime( now  )
         }else{
-            setStandardTime( addStringTime(standardTime, 60*60*1000 * (type*1))  )
+            setStandardTime( addStringTime(standardTime, -60*60*1000 * (type*1))  )
         }
-        
     }
 
     return(
@@ -37,13 +36,13 @@ function TimeLineHeader(props){
                         <div className="unit_time">{getDayTimeFromString( addStringTime(standardTime, 60*60*1000), true )}</div>
                     </div>
                     <div>
-                        <div className="unit_hour left" onClick={()=>{ setTimeRange("-1") }}><i className="iconfont icon-shangyibu"></i></div>
+                        <div className="unit_hour left"><i className="iconfont icon-shangyibu"></i></div>
                         <div className="unit_hour" onClick={()=>{ setTimeRange("-1") }} >-1h</div>
                         <div className="unit_hour" onClick={()=>{ setTimeRange("reset") }}>重置</div>
                         <div className="unit_hour" onClick={()=>{ setTimeRange("1") }}>+1h</div>
-                        <div className="unit_hour" onClick={()=>{ setTimeRange("2") }}>+2h</div>
-                        <div className="unit_hour" onClick={()=>{ setTimeRange("4") }}>+4h</div>
-                        <div className="unit_hour right" onClick={()=>{ setTimeRange("1") }}><i className="iconfont icon-xiayibu"></i></div>
+                        <div className="unit_hour" onClick={()=>{ setTimeRange("-1") }}>+2h</div>
+                        <div className="unit_hour" onClick={()=>{ setTimeRange("-1") }}>+4h</div>
+                        <div className="unit_hour right"><i className="iconfont icon-xiayibu"></i></div>
                     </div>
                 </div>
     )

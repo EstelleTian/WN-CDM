@@ -1,7 +1,7 @@
 /*
  * @Author: liutianjiao
  * @Date: 2020-12-09 21:19:04
- * @LastEditTime: 2020-12-17 11:03:31
+ * @LastEditTime: 2020-12-17 09:57:49
  * @LastEditors: Please set LastEditors
  * @Description: 表格列表组件
  * @FilePath: \WN-CDM\src\components\FlightTable\FlightTable.jsx
@@ -26,7 +26,7 @@ FlightTable.ProtoTypes = {
 function FlightTable(){
   let [tableWidth, setWidth] = useState(0);
   let [tableHeight, setHeight] = useState(0);
-  let [searchVal, setSearchVal] = useState("");
+  let [searchInput]
   
   useEffect(() => {
     //   console.log("useEffect 触发");
@@ -57,19 +57,8 @@ function FlightTable(){
             >
                 
                 <div className="total_num">
-                    <div>{searchVal} </div>
-                    <Input.Search 
-                        allowClear 
-                        style={{ width: '180px', marginRight: '15px' }} 
-                        defaultValue={searchVal} 
-                        onPressEnter={(e)=>{
-                            setSearchVal( e.target.value )
-                        }}
-                        onSearch={(value)=>{
-                            setSearchVal( value )
-                        }}
-                    />
-                    
+                    <Input.Search allowClear style={{ width: '180px', marginRight: '15px' }} defaultValue="AA" />
+
                     <span>总计{data.length}条</span>
                 </div>
                 <Table

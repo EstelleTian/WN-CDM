@@ -22,7 +22,7 @@ function TimeLineHeader(props){
         }else{
             setStandardTime( addStringTime(standardTime, 60*60*1000 * (type*1))  )
         }
-        
+            
     }
 
     return(

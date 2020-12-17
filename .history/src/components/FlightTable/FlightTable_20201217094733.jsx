@@ -1,7 +1,7 @@
 /*
  * @Author: liutianjiao
  * @Date: 2020-12-09 21:19:04
- * @LastEditTime: 2020-12-17 11:03:31
+ * @LastEditTime: 2020-12-17 09:47:33
  * @LastEditors: Please set LastEditors
  * @Description: 表格列表组件
  * @FilePath: \WN-CDM\src\components\FlightTable\FlightTable.jsx
@@ -10,7 +10,7 @@
 import React, {Component, useState, useEffect} from 'react'
 import ProtoTypes from 'prop-types'
 import ResizeObserver from "rc-resize-observer"
-import { Table, Input } from 'antd'
+import { Table } from 'antd'
 import ModalBox from '../../components/ModalBox/ModalBox'
 import { columns, data } from '../../components/FlightTable/TableColumns.js'
 import './FlightTable.scss';
@@ -26,7 +26,6 @@ FlightTable.ProtoTypes = {
 function FlightTable(){
   let [tableWidth, setWidth] = useState(0);
   let [tableHeight, setHeight] = useState(0);
-  let [searchVal, setSearchVal] = useState("");
   
   useEffect(() => {
     //   console.log("useEffect 触发");
@@ -56,22 +55,6 @@ function FlightTable(){
                 title="航班列表"
             >
                 
-                <div className="total_num">
-                    <div>{searchVal} </div>
-                    <Input.Search 
-                        allowClear 
-                        style={{ width: '180px', marginRight: '15px' }} 
-                        defaultValue={searchVal} 
-                        onPressEnter={(e)=>{
-                            setSearchVal( e.target.value )
-                        }}
-                        onSearch={(value)=>{
-                            setSearchVal( value )
-                        }}
-                    />
-                    
-                    <span>总计{data.length}条</span>
-                </div>
                 <Table
                     columns={columns}
                     dataSource={data}

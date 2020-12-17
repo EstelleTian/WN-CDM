@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-16 18:31:44
- * @LastEditTime: 2020-12-17 09:42:42
+ * @LastEditTime: 2020-12-17 09:40:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\components\TimeLineFlight\TimeLineHeader.jsx
@@ -22,7 +22,6 @@ function TimeLineHeader(props){
         }else{
             setStandardTime( addStringTime(standardTime, 60*60*1000 * (type*1))  )
         }
-        
     }
 
     return(

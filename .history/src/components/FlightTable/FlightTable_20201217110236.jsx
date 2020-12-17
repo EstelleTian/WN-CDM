@@ -1,7 +1,7 @@
 /*
  * @Author: liutianjiao
  * @Date: 2020-12-09 21:19:04
- * @LastEditTime: 2020-12-17 11:03:31
+ * @LastEditTime: 2020-12-17 11:02:36
  * @LastEditors: Please set LastEditors
  * @Description: 表格列表组件
  * @FilePath: \WN-CDM\src\components\FlightTable\FlightTable.jsx
@@ -65,8 +65,8 @@ function FlightTable(){
                         onPressEnter={(e)=>{
                             setSearchVal( e.target.value )
                         }}
-                        onSearch={(value)=>{
-                            setSearchVal( value )
+                        onSearch={(e)=>{
+                            setSearchVal( e.target.value )
                         }}
                     />
                     

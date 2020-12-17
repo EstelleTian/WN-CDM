@@ -1,7 +1,7 @@
 /*
  * @Author: liutianjiao
  * @Date: 2020-12-09 21:19:04
- * @LastEditTime: 2020-12-17 11:03:31
+ * @LastEditTime: 2020-12-17 09:58:21
  * @LastEditors: Please set LastEditors
  * @Description: 表格列表组件
  * @FilePath: \WN-CDM\src\components\FlightTable\FlightTable.jsx
@@ -57,19 +57,7 @@ function FlightTable(){
             >
                 
                 <div className="total_num">
-                    <div>{searchVal} </div>
-                    <Input.Search 
-                        allowClear 
-                        style={{ width: '180px', marginRight: '15px' }} 
-                        defaultValue={searchVal} 
-                        onPressEnter={(e)=>{
-                            setSearchVal( e.target.value )
-                        }}
-                        onSearch={(value)=>{
-                            setSearchVal( value )
-                        }}
-                    />
-                    
+                    <Input.Search allowClear style={{ width: '180px', marginRight: '15px' }} defaultValue={searchVal} on/>
                     <span>总计{data.length}条</span>
                 </div>
                 <Table

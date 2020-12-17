@@ -66,7 +66,8 @@ function FlightTable(){
                             setSearchVal( e.target.value )
                         }}
                         onSearch={(value)=>{
-                            setSearchVal( value )
+                            debugger
+                            setSearchVal( e.target.value )
                         }}
                     />
                     
