@@ -1,9 +1,9 @@
 /*
  * @Author: your name
  * @Date: 2020-12-15 15:54:57
- * @LastEditTime: 2020-12-15 15:56:09
+ * @LastEditTime: 2020-12-16 18:26:59
  * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
+ * @Description: 航班查询
  * @FilePath: \WN-CDM\src\components\FlightSearch\FlightSearch.jsx
  */
 import React, {useState, useEffect} from 'react'

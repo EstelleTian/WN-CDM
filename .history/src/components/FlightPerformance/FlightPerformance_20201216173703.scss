@@ -1,0 +1,6 @@
+.flight_performance_list_container {
+  height: 100%;
+  @include display_fle
+  display: flex;
+  flex-direction: row;
+}

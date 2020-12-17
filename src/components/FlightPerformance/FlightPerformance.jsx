@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-15 15:54:57
- * @LastEditTime: 2020-12-16 17:39:16
+ * @LastEditTime: 2020-12-16 17:44:02
  * @LastEditors: Please set LastEditors
  * @Description: In U.3ser Settings Edit
  * @FilePath: \WN-CDM\src\components\FlightSearch\FlightSearch.jsx
@@ -93,7 +93,7 @@ const FlightPerformance =(props) => {
                 </div>
             </div>
             <div className="performance_item">
-            <PerformanceItemHeader style={ {background:"#ff99994c", color:"#CC3366"}} title="绩效"  value="良好"  />
+            <PerformanceItemHeader style={ {background:"#ff99994c", color:"#CC3366"}} title="XX"  value="XX"  />
             <div className="content">
                 <List listData={[
                     {
