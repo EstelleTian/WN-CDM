@@ -23,6 +23,7 @@
     "leaflet": "^1.7.1",
     "mobx": "^6.0.4",
     "mobx-react": "^7.0.5",
+    "mockjs": "^1.1.0",
     "node-sass": "npm:dart-sass@^1.25.0",
     "prop-types": "^15.7.2",
     "rc-resize-observer": "^0.3.0",

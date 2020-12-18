@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-14 15:16:04
- * @LastEditTime: 2020-12-16 19:22:01
+ * @LastEditTime: 2020-12-18 15:18:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\pages\TimeLineFlightPage\TimeLineFlightPage.jsx
@@ -11,6 +11,9 @@ import ResizeObserver from "rc-resize-observer"
 import TimeLineHeader from './TimeLineHeader'
 import FlightCard from "./FlightCard"
 import './TimeLineFlight.scss'
+
+const testFlightsData = {};
+
 
 //航班时间轴模块
 const TimeLineFlight = (props) => {
@@ -61,15 +64,16 @@ const TimeLineFlight = (props) => {
                     }
                     </div>    
                     <div className="timeline line1">
-                    {
-                        timeNum.map( (item) => {
-                            return (
-                                <FlightCard key={item} height={flightHeight} item={item} ></FlightCard>
-                            )
-                        })
+                        {
+                            timeNum.map( (item) => {
+                                return (
+                                    <FlightCard key={item} height={flightHeight} item={item} ></FlightCard>
+                                )
+                            })
+                                
                             
-                        
-                    }</div>
+                        }
+                    </div>
                     <div className="timeline line2">
                     {
                         timeNum.map( (item) => {
