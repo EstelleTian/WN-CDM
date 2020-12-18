@@ -20,10 +20,10 @@ $c-white-50: rgba(255, 255, 255, 0.5);
 $red: #ff0000;
 
 @mixin display_flex($dir: row){
-    display: box;
-    display: -webkit-box;     
-    display: -moz-box;        
-    display: -ms-flexbox;     
+    display: flex;
+    display: -webkit-flex;     
+    display: -moz-flex;        
+    display: -ms-flex;     
     display: -webkit-flex; 
     -webkit-flex-direction: $dir;
     -moz-flex-direction: $dir;
@@ -33,8 +33,8 @@ $red: #ff0000;
 }
 /* 子元素-平均分栏 */
 @mixin flex($part: 1) {
-    -webkit-box-flex: $part;
-    -moz-box-flex: $part;                    
+    -webkit-flex: $part;
+    -moz-flex: $part;                    
     -webkit-flex: $part;         
     -ms-flex: $part;             
     flex: $part; 

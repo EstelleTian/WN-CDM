@@ -10,6 +10,7 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import FangxingPage  from '../pages/FangxingPage/FangxingPage';
 import TotalPage  from '../pages/TotalPage/TotalPage';
+import InfoPage  from '../pages/InfoPage/InfoPage';
 
 class Routes extends Component{
     render(){
@@ -18,6 +19,7 @@ class Routes extends Component{
                 <Route exact path="/" component={FangxingPage} />
                 <Route path="/fangxing" component={FangxingPage} />
                 <Route path="/total" component={TotalPage} />
+                <Route path="/info" component={InfoPage} />
             </Router>
         )
     }

@@ -83,12 +83,11 @@
         }
         .timeline{
             font-size: 12px;
-            // display: inline-block;
             >div{
                 min-height: 12px;
             }
         }
-        .line1,.line2{
+        .fline{
             @include flex();
         }
         .date_line{

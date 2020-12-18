@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-14 10:18:25
- * @LastEditTime: 2020-12-16 18:40:00
+ * @LastEditTime: 2020-12-18 17:24:37
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\stores\schemeStores.jsx
@@ -70,12 +70,21 @@ class SchemeListData{
     }
 
     @action updateList( arr ){
-        this.list.map((item,index)=>{
-            this.list.splice(index,1)
-        });
-        arr.map( opt => {
-            const item = new SchemeItem(opt);
-            this.list.unshift( item );
+        const len = this.list.length;
+        arr.map( item => {
+            const id = item.id;
+            //检验list有没有同id的方案
+            let hasScheme = this.list.filter( todo => id === todo.id).length === 0 ? false : true;
+
+            //没有同id的就添加一条
+            if( len === 0 || hasScheme === false ){
+                const itemIns = new SchemeItem(item);
+                this.list.unshift( itemIns );
+            }else{
+                //有同id的 更新数据
+                this.update(item);
+            }
+            
         })
     }
     //查找有没有激活的方案
@@ -87,6 +96,8 @@ class SchemeListData{
             return false
         }
     } 
+    
+
 }
 
 let schemeListData = new SchemeListData();
