@@ -68,6 +68,16 @@ class SchemeListData{
     @action delScheme( schemeItem ){
         this.list.remove( schemeItem );
     }
+
+    @action updateList( arr ){
+        this.list.map((item,index)=>{
+            this.list.splice(index,1)
+        });
+        arr.map( opt => {
+            const item = new SchemeItem(opt);
+            this.list.unshift( item );
+        })
+    }
     //查找有没有激活的方案
     @computed get hasActiveScheme(){
         let len = this.list.filter( todo => todo.active).length;
