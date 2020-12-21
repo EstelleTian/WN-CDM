@@ -3557,6 +3557,11 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
+commander@*:
+  version "6.2.1"
+  resolved "https://registry.npm.taobao.org/commander/download/commander-6.2.1.tgz?cache=0&sync_timestamp=1607933602027&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcommander%2Fdownload%2Fcommander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
+  integrity sha1-B5LraC37wyWZm7K4T93duhEKxzw=
+
 commander@^2.20.0:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
@@ -7683,6 +7688,13 @@ mobx@^6.0.4:
   version "6.0.4"
   resolved "https://registry.yarnpkg.com/mobx/-/mobx-6.0.4.tgz#8fc3e3629a3346f8afddf5bd954411974744dad1"
   integrity sha512-wT2QJT9tW19VSHo9x7RPKU3z/I2Ps6wUS8Kb1OO+kzmg7UY3n4AkcaYG6jq95Lp1R9ohjC/NGYuT2PtuvBjhFg==
+
+mockjs@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/mockjs/download/mockjs-1.1.0.tgz#e6a0c378e91906dbaff20911cc0273b3c7d75b06"
+  integrity sha1-5qDDeOkZBtuv8gkRzAJzs8fXWwY=
+  dependencies:
+    commander "*"
 
 moment@^2.24.0, moment@^2.25.3:
   version "2.29.1"

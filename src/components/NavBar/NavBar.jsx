@@ -1,14 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2020-12-09 21:19:04
- * @LastEditTime: 2020-12-15 20:26:04
+ * @LastEditTime: 2020-12-18 18:08:32
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\components\NavBar\NavBar.jsx
  */
 import React, {Component} from 'react'
 import { inject, observer } from 'mobx-react'
-import { Layout, Badge, Avatar } from 'antd'
+import { Layout, Badge, Avatar, Drawer } from 'antd'
 import {
     BellOutlined, UserOutlined
   } from '@ant-design/icons'
@@ -29,8 +29,12 @@ function NavBar(props){
                 <Avatar className="user_icon" icon={<UserOutlined />} />
                 <span className="user_name">{props.username}</span>
             </div>
+        
         </Header>
     )
 }
 
 export default NavBar;
+
+
+

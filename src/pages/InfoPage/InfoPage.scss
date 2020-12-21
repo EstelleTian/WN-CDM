@@ -1,0 +1,87 @@
+.info_canvas{
+    width: 680px;
+    height: 437.3px;
+    background:  rgb(34,51,51);
+    font-size: 16px;
+    .info_header{
+        position: relative;
+        padding: 3px 10px;
+        border-bottom: 2px solid grey;
+        >div{
+            display: inline-block;
+        }
+        .scroll{
+            position: absolute;
+            right: 120px;
+        }
+        .to_top{
+            position: absolute;
+            right: 40px;
+        }
+        .radish{
+            position: absolute;
+            right: 210px;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        .close{
+            position: absolute;
+            right: 10px;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+    .info_content{
+        .info_card{
+            @include display_flex();
+            margin-bottom: 15px;
+            .level_icon{
+                width: 50px;
+                justify-content: center;
+                align-items: center;
+                @include display_flex();
+            }
+            .card_cont{
+                @include flex();
+                position: relative;
+                >div{
+                    display: inline-block;
+                    >div{
+                        display: inline-block;
+                    }
+                }
+                .date{
+                    padding-left: 20px;
+                }
+                .options{
+                    >button{
+                        background: black;
+                        margin-left: 10px;
+                    }
+                }
+                .warn{
+                    color: red;
+                }
+                
+                .msg{
+                    color: green;
+                }
+                
+                .notice{
+                    color: orange;
+                }
+                .close{
+                    float: right;
+                    margin-right: 10px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        
+
+    }
+}
