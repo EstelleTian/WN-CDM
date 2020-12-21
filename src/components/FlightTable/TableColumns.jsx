@@ -7,6 +7,56 @@
  * @FilePath: \WN-CDM\src\pages\TablePage\TableColumns.js
  */
 import { isValidVariable } from '../../utils/basic-verify'
+import { Table, Input, Menu, Dropdown ,Icon, Button ,notification   } from 'antd'
+
+
+
+const renderContent = (value, row, index, colKey) => {
+    const menu = (
+        <Menu>
+            <Menu.Item key="1">1st menu item</Menu.Item>
+            <Menu.Item key="2">2nd menu item</Menu.Item>
+            <Menu.Item key="3">3rd menu item</Menu.Item>
+        </Menu>
+    );
+    const obj = {
+        children: <Dropdown overlay={menu}  trigger={['contextMenu']} >
+                        <span>{value}</span>
+                </Dropdown>,
+        props: {
+            "col-key":colKey
+        },
+    };
+    return obj;
+};
+const Item = Menu.Item
+const showButtonClick = ( value, row, index, colKey, text)=>{
+    console.log(value)
+    notification.open({
+        duration:null,
+        message: '点击',
+        description:
+            `点击了第${(index+1)}行${colKey}列的${text}按钮`,
+    });
+}
+const menu = (value, row, index, colKey)  =>
+    <Menu>
+        <Item>COL:{colKey}</Item>
+        <Item>VALUE:{value}</Item>
+        <Item>INDEX:{index}</Item>
+        <Item>
+            <Button type="primary"
+                    onClick={()=>showButtonClick(value, row, index, colKey,"航班详情")}>
+                航班详情123456
+            </Button>
+        </Item>
+    </Menu>
+
+const render = (value, row, index, colKey)  =>
+    <Dropdown overlay={menu(value, row, index, colKey)} trigger={[`contextMenu`]}>
+        <div className="ccc">{value}</div>
+    </Dropdown>
+
 //表格列配置
 const names = {
     "FLIGHTID":{
@@ -114,6 +164,7 @@ for(let key in names){
         key: en,
         width: 63,
         ellipsis: true,
+        className: en,
     }
     //排序
     tem["sorter"] = (a,b) => {
@@ -144,6 +195,10 @@ for(let key in names){
     if( en === "EXIT_POINT" || en === "EXIT_POINT_TIME" || en === "ENTRY_POINT" || en === "ENTRY_POINT_TIME" || en === "GUID"){
         tem["width"] = 80
     }
+    tem["render"] = (text, record, index) => {
+        return render(text,record,index, en);
+    }
+
     columns.push(tem)
 }
 

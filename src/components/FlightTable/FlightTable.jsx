@@ -10,9 +10,9 @@
 import React, {Component, useState, useEffect} from 'react'
 import ProtoTypes from 'prop-types'
 import ResizeObserver from "rc-resize-observer"
-import { Table, Input } from 'antd'
+import { Table, Input, Menu, Dropdown   } from 'antd'
 import ModalBox from '../../components/ModalBox/ModalBox'
-import { columns, data } from '../../components/FlightTable/TableColumns.js'
+import { columns, data } from '../../components/FlightTable/TableColumns'
 import './FlightTable.scss';
 
 FlightTable.ProtoTypes = {
@@ -27,7 +27,9 @@ function FlightTable(){
   let [tableWidth, setWidth] = useState(0);
   let [tableHeight, setHeight] = useState(0);
   let [searchVal, setSearchVal] = useState("");
-  
+  let [contextMenu, setContextMenu] = useState({visible:true});
+
+
   useEffect(() => {
     //   console.log("useEffect 触发");
       const dom = document.getElementsByClassName("flight_canvas")[0];
@@ -39,7 +41,24 @@ function FlightTable(){
       setHeight( height );
     //   console.log("useEffect：", width, height);
       
-  }, [tableWidth, tableHeight])
+  }, [tableWidth, tableHeight,  contextMenu])
+
+  const  onRow = (record, index) => ({
+        onContextMenu: event => {
+            event.preventDefault();
+            const localName = event.target.localName;
+            let targetParent = event.target;
+            if( localName != "td"){
+                targetParent = event.target.parentElement;
+            }
+            const colKey = targetParent.getAttribute('col-key');
+            setContextMenu({
+                visible: true
+            })
+            console.log(colKey);
+        }
+  })
+
   return (
       <ResizeObserver
           onResize={({width, height}) => {
@@ -82,7 +101,8 @@ function FlightTable(){
                     size="small"
                     bordered
                     pagination={false}
-                
+                    onRow={onRow}
+
                 />
           </ModalBox>
           
