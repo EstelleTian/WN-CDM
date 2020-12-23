@@ -4,7 +4,7 @@
     background:  rgb(34,51,51);
     font-size: 16px;
     overflow-x: hidden;
-    overflow-y: auto;
+    
     .info_header{
         position: relative;
         padding: 3px 10px;
@@ -36,6 +36,7 @@
         }
     }
     .info_content{
+        overflow-y: auto;
         >div{
             position: relative;
         }

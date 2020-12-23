@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-18 18:39:39
- * @LastEditTime: 2020-12-22 18:45:09
+ * @LastEditTime: 2020-12-22 20:36:30
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\pages\InfoPage\InfoPage.jsx
@@ -44,7 +44,7 @@ class InfoCard extends Component{
         
     }
     render (){
-        let { message:{level, sendTime, content}, newsList } = this.props;
+        let { message:{level, sendTime, content, dataType}, newsList } = this.props;
         level = getLevel( level );
         return (
             <CSSTransition 
@@ -64,7 +64,12 @@ class InfoCard extends Component{
                         <div className={`level_text ${level}`}>{level}</div>
                         <div className="date">{ formatTimeString( sendTime ) }</div>
                         <div className="options">
-                            <Button size="small">查看放行监控</Button>
+                            {
+                                dataType === "FCDM" ? <Button size="small">查看放行监控</Button> : ""
+                            }
+                            {
+                                (dataType === "OPEI" || dataType === "FTMI") ? <Button size="small">查看容流监控</Button> : ""
+                            }
                         </div>
                         <div className="close" onClick={this.removeCard}>X</div>
                     </div>
