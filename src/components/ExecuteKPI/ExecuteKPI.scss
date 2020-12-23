@@ -1,0 +1,32 @@
+
+.kpi_canvas{
+    >div{
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+        
+    }
+    .title{
+        text-align: center;
+        font-size: 16px;
+    }
+    .cus_cont{
+        text-align: center;
+        font-size: 20px;
+    }
+    .effect{
+        >div{
+            text-align: center;
+        }
+        .warn{
+            font-size: 28px;
+            color: red;
+        }
+    }
+    .other_effect{
+        >div{
+            width: 50%;
+            display: inline-block;
+        }
+    }
+}
