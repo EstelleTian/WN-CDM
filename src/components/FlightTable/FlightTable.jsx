@@ -101,7 +101,7 @@ function FlightTable(){
                     size="small"
                     bordered
                     pagination={false}
-                    onRow={onRow}
+                    // onRow={onRow}
 
                 />
           </ModalBox>
