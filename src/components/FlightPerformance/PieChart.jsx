@@ -53,7 +53,8 @@ const PieChart = (props) => {
             <ReactEcharts
                 theme="dark"
                 option={getOption()}
-                className='react_for_echarts'/>
+                style={props.style}
+                className='react_for_echarts layout-row flex-wrap justify-content-center'/>
         </div>
     )
 }
