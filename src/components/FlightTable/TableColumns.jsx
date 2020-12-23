@@ -7,7 +7,7 @@
  * @FilePath: \WN-CDM\src\pages\TablePage\TableColumns.js
  */
 import { isValidVariable } from '../../utils/basic-verify'
-import { Table, Input, Menu, Dropdown ,Icon, Button ,notification   } from 'antd'
+import { Table, Input, Menu, Dropdown ,Icon, Button ,notification, Tooltip, Popover, Checkbox, DatePicker     } from 'antd'
 
 
 
@@ -30,32 +30,67 @@ const renderContent = (value, row, index, colKey) => {
     return obj;
 };
 const Item = Menu.Item
-const showButtonClick = ( value, row, index, colKey, text)=>{
-    console.log(value)
+const showButtonClick = ( opt)=>{
+    const {text, record, index, col} = opt;
     notification.open({
         duration:null,
         message: '点击',
         description:
-            `点击了第${(index+1)}行${colKey}列的${text}按钮`,
+            `点击了第${(index+1)}行${col}列的${text}按钮`,
     });
 }
-const menu = (value, row, index, colKey)  =>
-    <Menu>
-        <Item>COL:{colKey}</Item>
-        <Item>VALUE:{value}</Item>
-        <Item>INDEX:{index}</Item>
-        <Item>
-            <Button type="primary"
-                    onClick={()=>showButtonClick(value, row, index, colKey,"航班详情")}>
-                航班详情123456
-            </Button>
-        </Item>
-    </Menu>
 
-const render = (value, row, index, colKey)  =>
-    <Dropdown overlay={menu(value, row, index, colKey)} trigger={[`contextMenu`]}>
-        <div className="ccc">{value}</div>
-    </Dropdown>
+
+const getTitle = (opt)  =>{
+    const {text, record, index, col} = opt;
+    return record.FLIGHTID
+}
+const getContent = (opt)  =>{
+    const {text, record, index, col} = opt;
+    return (
+        <div>
+            <div>
+                <Input addonBefore="航班"  defaultValue={ record.FLIGHTID }  disabled />
+            </div>
+            <div>
+                <Input addonBefore="机场"  defaultValue={ record.FLIGHTID } disabled  />
+            </div>
+            <div>
+                <Input addonBefore="日期"  defaultValue={ record.FLIGHTID } />
+                <DatePicker addonBefore="日期"  />
+            </div>
+            <div>
+                <Input addonBefore="时间"  defaultValue={ record.FLIGHTID } />
+            </div>
+            <div>
+                <Checkbox >禁止系统自动调整</Checkbox>
+            </div>
+            <div>
+                <Input.TextArea showCount maxLength={100} />
+            </div>
+            <div>
+                <Button type="primary">Primary Button</Button>
+                <Button>Default Button</Button>
+            </div>
+
+
+        </div>
+    )
+}
+
+
+const render = (opt)  => {
+    const {text, record, index, col} = opt;
+    if(isValidVariable(text)){
+        return  <Popover destroyTooltipOnHide ={ { keepParent: false  } } placement="rightTop" title={getTitle(opt)} content={getContent(opt)}  trigger={[`contextMenu`]} >
+            <div className="ccc">{text}</div>
+        </Popover >
+    }else {
+
+    }
+
+}
+
 
 //表格列配置
 const names = {
@@ -196,7 +231,13 @@ for(let key in names){
         tem["width"] = 80
     }
     tem["render"] = (text, record, index) => {
-        return render(text,record,index, en);
+        const opt = {
+            text,
+            record,
+            index,
+            col: en,
+        };
+        return render(opt);
     }
 
     columns.push(tem)
