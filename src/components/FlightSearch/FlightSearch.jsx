@@ -1,12 +1,12 @@
 /*
  * @Author: your name
  * @Date: 2020-12-15 15:54:57
- * @LastEditTime: 2020-12-16 18:26:59
+ * @LastEditTime: 2020-12-21 09:42:52
  * @LastEditors: Please set LastEditors
  * @Description: 航班查询
  * @FilePath: \WN-CDM\src\components\FlightSearch\FlightSearch.jsx
  */
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import { inject, observer } from 'mobx-react'
 import { isValidVariable } from '../../utils/basic-verify'
 import { List, Divider , Icon, Form, Input,  Select, Drawer, Tooltip, Tag  } from 'antd'
@@ -168,38 +168,38 @@ const FlightSearch = (props) => {
 
     ];
 
-    const drawFlightItem = function (item, index) {
+    const drawFlightItem = useCallback(function (item, index) {
+            return (
+                <List.Item key={ item.id } onClick={() => {
+                    showFlightDetail(item)
+                }} >
+                    <div className="flight-item">
+                        <a className="flight">
+                            <div className="flight-prop num">{index + 1}</div>
+                            <div className="flight-prop flight-id">{item.flightId}</div>
+                            <div className="flight-prop flight-depap">{item.depap}</div>
+                            <div className="flight-prop flight-arrap">{item.arrap}</div>
+                            <div className="flight-prop flight-sobt">{item.sobt}</div>
+                            <div className="flight-prop flight-former">{item.former}</div>
+                        </a>
+                    </div>
+                </List.Item>
+            )
+        }
+    )
 
-        return (
-            <List.Item key={ item.id } onClick={() => {
-                showFlightDetail(item)
-            }} >
-                <div className="flight-item">
-                    <a className="flight">
-                        <div className="flight-prop num">{index + 1}</div>
-                        <div className="flight-prop flight-id">{item.flightId}</div>
-                        <div className="flight-prop flight-depap">{item.depap}</div>
-                        <div className="flight-prop flight-arrap">{item.arrap}</div>
-                        <div className="flight-prop flight-sobt">{item.sobt}</div>
-                        <div className="flight-prop flight-former">{item.former}</div>
-                    </a>
-                </div>
-            </List.Item>
-        )
-    }
 
-
-    const showFlightDetail = function (flight) {
+    const showFlightDetail = useCallback(function (flight) {
         console.log(flight)
         setFlight(flight);
         setDrawerVisible(true);
-    };
+    });
 
-    const  closeDrawer = function () {
+    const  closeDrawer = useCallback(function () {
         setDrawerVisible(false)
-    }
+    })
 
-    const drawFlightSummerData = function () {
+    const drawFlightSummerData = useCallback(function () {
         return (
         <div className="summary-container">
             <div className="state">
@@ -247,17 +247,17 @@ const FlightSearch = (props) => {
         )
 
 
-    }
-    const drawDrawerTitle = function () {
+    })
+    const drawDrawerTitle = useCallback(function () {
         const text  = <span>{`查看航班详情`}</span>;
 
         const title = <Tooltip placement="top" title={text}>
                         <span className="title-flight-id">{flight.flightId}</span>
                     </Tooltip>;
         return title
-    };
+    });
 
-    const searchFlightData = function (value) {
+    const searchFlightData = useCallback(function (value) {
         value = value.toUpperCase();
         if(!isValidVariable(value)){
             setSearchTootipVisible(true);
@@ -268,25 +268,25 @@ const FlightSearch = (props) => {
                 mockData(value)
             },1000*1,value);
         }
-    };
-    const pressEnter = function (e) {
+    });
+    const pressEnter = useCallback(function (e) {
         const value = e.target.value.toUpperCase();
         searchFlightData(value);
-    };
+    });
 
-    const changeValue = function (e) {
+    const changeValue = useCallback(function (e) {
         const value = e.target.value;
         if(isValidVariable(value)){
             setSearchTootipVisible(false);
         }
-    };
+    });
 
-    const  hideTooltip = function () {
+    const  hideTooltip = useCallback(function () {
         setSearchTootipVisible(false);
-    }
+    })
 
 
-    const mockData = function (value) {
+    const mockData = useCallback(function (value) {
         setSearchLoadingVisible(false)
         setFlightListData((old)=>{
             const data = mockFlightListData.filter((element)=>{
@@ -302,7 +302,7 @@ const FlightSearch = (props) => {
             return data
         });
 
-    }
+    })
 
 
 

@@ -1,5 +1,5 @@
 .layout{
-    @include display_flex();
+    @include display_flex(column);
     .nav_bar{
         height: 44px;
     }
@@ -7,7 +7,8 @@
         @include flex();
         @include display_flex();
         .cont_left{
-            @include flex(2);
+            @include display_flex(column);
+            @include flex(1);
             .timeline_dom{
                 height: 100%;
                 >div{
@@ -17,18 +18,20 @@
                 }
                 
             }
+            .kpi{
+                @include flex(1);
+            }
+            
+    
         }
         .cont_center{
             @include display_flex(column);
-            @include flex(3);
+            @include flex(2);
         }
         .cont_right{
-            width: 450px;
+            width: 400px;
             @include display_flex(column);
         }
-    }
-    .flight_search{
-        height: 330px;
     }
 }
 

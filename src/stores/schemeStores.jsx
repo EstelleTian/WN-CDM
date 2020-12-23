@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-14 10:18:25
- * @LastEditTime: 2020-12-18 17:24:37
+ * @LastEditTime: 2020-12-22 19:24:44
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\stores\schemeStores.jsx
@@ -13,30 +13,36 @@ import { makeObservable, observable, action, computed } from 'mobx'
 class SchemeItem{
     // 方案id
     @observable id = ""
+     // 方案选中状态
+     @observable active = false
     // 方案名称
-    @observable title = ""
-    // 方案正常率
-    @observable normalRate = ""
-    // 方案选中状态
-    @observable active = false
+    @observable tacticName = ""
+    // 方案发布单位
+    @observable tacticPublishUnit = ""
+    // 方案发布用户
+    @observable tacticPublishUser = ""
+    // 方案状态
+    @observable tacticStatus = ""
+    // 交通流领域对象
+    @observable trafficFlowDomainMap = {}
+    // 方案来源
+    @observable tacticSource = ""
+    // 方案时间信息对象
+    @observable tacticTimeInfo = {}
     
     constructor( opt ){
         makeObservable(this)
-        this.id = opt.id
-        this.title = opt.title
-        this.normalRate = opt.normalRate
+        for( let key in opt ){
+            this[key] = opt[key]
+        }
         this.active = false
     }
     // 方案数据更新
     @action update( opt ){
-        if( opt.hasOwnProperty("id") ){
-            this.id = opt.id 
-        }
-        if( opt.hasOwnProperty("title") ){
-            this.title = opt.title
-        }
-        if( opt.hasOwnProperty("normalRate") ){
-            this.normalRate = opt.normalRate
+        for( let key in opt ){
+            if( this.hasOwnProperty(key) ){
+                this[key] = opt[key]
+            }
         }
     }
     // 方案状态切换
@@ -82,7 +88,7 @@ class SchemeListData{
                 this.list.unshift( itemIns );
             }else{
                 //有同id的 更新数据
-                this.update(item);
+                item.update(item);
             }
             
         })

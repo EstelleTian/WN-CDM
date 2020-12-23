@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-15 10:52:07
- * @LastEditTime: 2020-12-15 15:13:44
+ * @LastEditTime: 2020-12-21 14:46:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\pages\TablePage\TableColumns.js
@@ -246,7 +246,7 @@ for(let key in names){
 
 //表格数据
 const data = [];
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 200; i++) {
     data.push({
         "FLIGHTID":"CCA3345",
         "SPECIAL_STATUS":"",

@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-12-14 15:16:04
- * @LastEditTime: 2020-12-18 18:53:50
+ * @LastEditTime: 2020-12-21 09:16:04
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \WN-CDM\src\pages\TimeLineFlightPage\TimeLineFlightPage.jsx
@@ -71,9 +71,7 @@ const TimeLineFlight = (props) => {
     let [flightHeight, setFlightHeight] = useState(0)
     
 
-    useEffect(() => {
-        
-    }, [flightHeight])
+    useEffect(() => {}, [flightHeight])
     return(
         <ResizeObserver
           onResize={({width, height}) => {
